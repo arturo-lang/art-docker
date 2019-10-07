@@ -16,6 +16,6 @@ or (in case there is any error)
 
 **Arturo REPL in action**
 
-![alt text](screenshot.png "Arturo REPL")
+![alt text](https://github.com/arturo-lang/art-docker/blob/master/screenshot.png "Arturo REPL")
 
 That was it. Rock on! ;)
