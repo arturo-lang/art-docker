@@ -10,4 +10,12 @@ Just open the terminal and type:
 
 `docker run -ti fingidor/arturo-lang`
 
+or (in case there is any error)
+
+`docker run -ti index.docker.io/fingidor/arturo-repl:latest`
+
+**Arturo REPL in action**
+
+![alt text](screenshot.png "Arturo REPL")
+
 That was it. Rock on! ;)
