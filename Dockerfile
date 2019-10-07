@@ -15,8 +15,8 @@ RUN apt-get install -y curl git libcurl3 libcurl4-openssl-dev libgio2.0-cil-dev 
 RUN curl -fsS https://dlang.org/install.sh | bash -s dmd 
 RUN apt-get install libgio2.0-cil-dev libgdk3.0-cil-dev
 
-RUN git clone https://github.com/arturo-lang/arturo.git
-RUN /bin/bash -c "source /root/dlang/dmd-2.088.0/activate" && cd arturo && dub build --build=release
+RUN git clone https://github.com/arturo-lang/arturo.git 
+RUN /bin/bash -c "source /root/dlang/dmd-2.088.0/activate && cd arturo && dub build --build=release"
 
 #############################
 # Set Entrypoint
@@ -26,4 +26,4 @@ RUN /bin/bash -c "source /root/dlang/dmd-2.088.0/activate" && cd arturo && dub b
 #RUN chmod a+x /entry_point.sh
 #CMD ./entry_point.sh
 
-#CMD ["bash"]
+CMD ["./arturo/arturo", "-c"]
