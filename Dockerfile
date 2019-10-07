@@ -19,11 +19,7 @@ RUN git clone https://github.com/arturo-lang/arturo.git
 RUN /bin/bash -c "source /root/dlang/dmd-2.088.0/activate && cd arturo && dub build --build=release"
 
 #############################
-# Set Entrypoint
+# Set Entry point
 #############################
-
-#COPY ./entry_point.sh /
-#RUN chmod a+x /entry_point.sh
-#CMD ./entry_point.sh
 
 CMD ["./arturo/arturo", "-c"]
