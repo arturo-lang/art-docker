@@ -14,8 +14,4 @@ or (in case there is any error)
 
 `docker run -ti index.docker.io/fingidor/arturo-repl:latest`
 
-**Arturo REPL in action**
-
-![alt text](https://github.com/arturo-lang/art-docker/blob/master/screenshot.png "Arturo REPL")
-
 That was it. Rock on! ;)
