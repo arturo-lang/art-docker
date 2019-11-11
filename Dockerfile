@@ -3,7 +3,7 @@
 # Docker configuration
 #############################
 
-FROM ubuntu:16.04
+FROM nimlang/nim
 
 #############################
 # Install Packages
@@ -11,15 +11,19 @@ FROM ubuntu:16.04
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y curl git libcurl3 libcurl4-openssl-dev libgio2.0-cil-dev libgdk3.0-cil-dev build-essential flex bison
-RUN curl -fsS https://dlang.org/install.sh | bash -s dmd 
-RUN apt-get install libgio2.0-cil-dev libgdk3.0-cil-dev
+RUN apt-get install -y curl git libcurl4 libgmp3-dev build-essential ruby flex bison
+
+RUN yes | nimble install bignum
+
+#############################
+# Clone & Build
+#############################
 
 RUN git clone https://github.com/arturo-lang/arturo.git 
-RUN /bin/bash -c "source /root/dlang/dmd-2.088.0/activate && cd arturo && dub build --build=release"
+RUN /bin/bash -c "cd arturo && nimble release"
 
 #############################
 # Set Entry point
 #############################
 
-CMD ["./arturo/arturo", "-c"]
+CMD ["./arturo/arturo"]
