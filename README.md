@@ -8,7 +8,7 @@ Want to run Arturo's REPL with a single command? There is a Docker image for tha
 
 Just open the terminal and type:
 
-`docker run -ti fingidor/arturo-lang`
+`docker run -ti fingidor/arturo-repl`
 
 or (in case there is any error)
 

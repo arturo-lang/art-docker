@@ -11,7 +11,7 @@ FROM yglukhov/nim-base
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y curl git libcurl4 libgmp3-dev build-essential ruby flex bison
+RUN apt-get install -y curl git build-essential ruby
 
 #############################
 # Clone & Build
