@@ -3,7 +3,7 @@
 # Docker configuration
 #############################
 
-FROM yglukhov/nim-base
+FROM fingidor/arturo-nim-docker:0.1
 
 #############################
 # Install Packages
