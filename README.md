@@ -8,10 +8,10 @@ Want to run Arturo's REPL with a single command? There is a Docker image for tha
 
 Just open the terminal and type:
 
-`docker run -ti fingidor/arturo-repl`
+`docker run -ti arturolang/arturo`
 
-or (in case there is any error)
+or (to run a specific local script)
 
-`docker run -ti index.docker.io/fingidor/arturo-repl:latest`
+`docker run -it -v $(pwd):/root arturolang/arturo arturo <yourscript.art>`
 
 That was it. Rock on! ;)
