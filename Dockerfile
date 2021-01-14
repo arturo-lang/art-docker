@@ -3,7 +3,7 @@
 # Docker configuration
 #############################
 
-FROM fingidor/arturo-nim-docker:0.1
+FROM nimlang/nim
 
 #############################
 # Install Packages
