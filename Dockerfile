@@ -1,33 +1,13 @@
-#############################
-# Arturo
-# Docker configuration
-#############################
+FROM frolvlad/alpine-nim
 
-FROM nimlang/nim
+RUN apk update
+RUN apk add git gmp-dev sqlite-dev pcre-dev
 
-#############################
-# Install Packages
-#############################
+RUN git clone https://github.com/arturo-lang/arturo.git
+RUN cd arturo && ./install mini log
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y curl git build-essential libgtk-3-dev libwebkit2gtk-4.0-dev
+ENV PATH="/root/.arturo/bin:${PATH}"
 
-#############################
-# Clone & Build
-#############################
+WORKDIR /home
 
-RUN git clone https://github.com/arturo-lang/arturo.git 
-RUN /bin/bash -c "cd arturo && ./build.sh install"
-
-#############################
-# Set current dir
-#############################
-
-WORKDIR /root
-
-#############################
-# Set Entry point
-#############################
-
-CMD ["arturo"]
+ENTRYPOINT [ "/root/.arturo/bin/arturo" ]
