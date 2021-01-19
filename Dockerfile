@@ -1,7 +1,7 @@
 FROM frolvlad/alpine-nim
 
 RUN apk update
-RUN apk add git gmp-dev sqlite-dev pcre-dev
+RUN apk add bash git gmp-dev pcre-dev sqlite-dev 
 
 RUN git clone https://github.com/arturo-lang/arturo.git
 RUN cd arturo && ./install mini log
