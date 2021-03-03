@@ -14,4 +14,4 @@ or (to run a specific local script)
 
 `docker run -it -v $(pwd):/home arturolang/arturo <yourscript.art>`
 
-That was it. Rock on! ;) 
+That was it. Rock on! ;)
