@@ -1,10 +1,10 @@
 FROM frolvlad/alpine-nim
 
 RUN apk update
-RUN apk add bash git gmp-dev pcre-dev sqlite-dev 
+RUN apk add bash git gmp-dev mpfr-dev pcre-dev sqlite-dev 
 
 RUN git clone https://github.com/arturo-lang/arturo.git
-RUN cd arturo && ./install mini log
+RUN cd arturo && ./build.nims install mini log
 
 ENV PATH="/root/.arturo/bin:${PATH}"
 
