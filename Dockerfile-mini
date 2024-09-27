@@ -1,7 +1,7 @@
 FROM nimlang/nim:alpine
 
 RUN apk update
-RUN apk add bash git gmp-dev mpfr-dev pcre-dev sqlite-dev 
+RUN apk add bash git pcre-dev 
 
 RUN git clone --depth 1 https://github.com/arturo-lang/arturo.git
 RUN cd arturo && ./build.nims build --install --mode mini --log
