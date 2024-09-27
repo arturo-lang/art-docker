@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-nim
+FROM nimlang/nim:alpine
 
 RUN apk update
 RUN apk add bash git gmp-dev mpfr-dev pcre-dev sqlite-dev 
